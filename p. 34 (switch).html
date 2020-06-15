@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <script>
+            switch(prompt("what is the weather like?")){
+                  case "rainy":
+                        console.log("Remember to bring an umbrella");
+                        break // hier wird der switch verlassen
+                  case "sunny": 
+                        console.log("dress lightly"); //ohne break an dieser Stelle, denkt JS, dass sunny und cloudy den code block "dress lightly" teilen
+                  case "cloudy":
+                        console.log("get outside");
+                        break
+                  default: console.log("unknown weather type")
+                  break;
+            }
+      </script>
+</body>
+</html>
