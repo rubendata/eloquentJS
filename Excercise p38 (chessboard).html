@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>FizzBuzz</title>
+</head>
+<body>
+      <script>
+            const boardSize = Math.pow(2,4);
+            let output = "";
+                  for(yAxis=0;yAxis<=boardSize;yAxis++){
+                        for(xAxis=0;xAxis<=boardSize;xAxis++){
+                              if((yAxis+xAxis)%2===0){
+                                    output = output + "#";
+                              } 
+                              else {
+                                    output = output + " ";
+                              }
+                        }
+                        output = output + "\n"
+                  }
+            console.log(output)
+
+            
+      </script>
+</body>
+</html>
