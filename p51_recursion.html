@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <script>
+            function findSolution(target){
+                  function find(current, history){
+                        if (current == target){
+                              return history;
+                        }
+                        else if (current > target){ 
+                              return null;
+                        }
+                        else {
+                              return find(current + 5, `(${history} + 5)`) ||
+                                     find(current * 3, `(${history} * 3)`)
+                        }
+                  }
+                  return find(1,"1");
+            }
+            console.log(findSolution(24));
+
+            function sumUp(start, target){
+                  
+                  start++;
+                  if(start === target) {
+                        return start
+                  }
+                  
+                  else {
+                        return sumUp(start, target)
+                  }
+                  
+            }
+            console.log(sumUp(0,10))
+      </script>
+</body>
+</html>
