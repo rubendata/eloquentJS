@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <script>
+            let obj = {
+                  name: "peter",
+                  age: 42
+            };
+
+            let obj2 = {
+                  name: "hans",
+                  age: 32
+            };
+
+            let noObj = null;
+            console.log(typeof(obj),typeof(noObj))
+            
+            console.log(obj === null, noObj === null)
+
+            console.log( Object.keys(obj))
+            console.log("---------------------")
+
+            function deepEqual(a,b){
+                  if(typeof(a)==="object" && typeof(b)==="object" && !(a === null || b === null) ) {
+                        console.log( Object.keys(a));
+                        console.log( Object.keys(a));
+                        return (Object.keys(a) == Object.keys(b));
+                  }
+                  else {
+                        console.log(false)
+                  }
+
+            }
+            console.log( deepEqual(obj,obj2))
+      </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <script>
+            let list = {
+                  value: 1,
+                  rest:{
+                        value:2,
+                        rest: {
+                              value:3,
+                              rest: null
+                        }
+                  }
+            }
+            console.log(list);
+            console.log(list.value);
+            console.log(list.rest.value);
+            console.log(list.rest.rest.value);
+            console.log("-----------------------")
+            console.log("arrayToList function:");
+            function arrayToList(array){
+                  
+                  let list = {}
+                  for(i=array.length-1; i>=0;i--){
+                        list = {
+                              value: array[i],
+                              rest: list
+                        }
+
+                  }
+                  
+                  return list;
+            }
+
+            console.log( arrayToList([1,2,3]));
+            console.log("-----------------------")
+            console.log("listToArray function:");
+            function listToArray(list){
+                  let array = [];
+                  for(list;list; list = list.rest){
+                  array.push(list.value)}
+                  return array;
+            }
+
+            
+            console.log(listToArray(list));
+            console.log("-----------------------");
+            console.log("prepend function:");
+            function prepend(e, list){
+                  let array = listToArray(list);
+                  array.unshift(e);
+                  list = arrayToList(array);
+                  return list;
+                  
+            }
+
+            console.log(prepend(1,list));
+            console.log("-----------------------");
+            console.log("nth function:");
+            
+            function nth(list, number){
+                  if(number===0) return list;
+                  else {
+                        for(i=1;i<=number;i++){
+                              
+                              
+                              list = list.rest;
+                              
+                        }
+                  }
+                  return list;
+            }
+            console.log(nth(list, 0));
+            console.log(nth(list, 1));
+            console.log(nth(list, 2));
+      </script>
+</body>
+</html>

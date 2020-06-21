@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <script>
+            function range(a,b){
+                  let array = [];
+                  let range = b-a+1;
+                  for(i=1;i<=range;i++){
+                        array.push(i);
+                  }
+                  return array;
+            }
+
+            function rangeWithStep(a,b,step){
+                  let array = [];
+                  
+                  if(step>0){
+                        while(!(a>=b)){
+                              array.push(a);
+                              a=a+step;
+                              
+                        }
+                  }
+                  else {
+                        while(!(a<b)){
+                              array.push(a);
+                              a=a+step;
+                              
+                        }
+                  }
+                  
+                  return array;
+            }
+            
+           console.log("range(1,10): "+range(1,10));
+           console.log("rangeWithStep(1,10,2): "+rangeWithStep(1,10,2));
+           console.log("rangeWithStep(5,2,-1): "+rangeWithStep(5,2,-1));
+
+          function getSum(array){
+            let sum = 0;
+            for(i of array){
+                  sum = sum + i;
+            }
+            return sum;
+          }
+          
+          console.log(getSum(range(1,10)));
+          console.log(getSum(rangeWithStep(1,10,2)));
+          console.log(getSum(rangeWithStep(5,2,-1)));
+
+      </script>
+</body>
+</html>

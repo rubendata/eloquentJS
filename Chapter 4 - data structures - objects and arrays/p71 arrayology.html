@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <script>
+            let todoList = [];
+            function remeber (task){
+                  todoList.push(task); //adds element to the end
+            }
+            function getTask(task){
+                  return todoList.shift(); //returns element and delets it from array
+            }
+            function rememberUrgently(task){
+                  todoList.unshift(task); //adds element at the beginning
+            }
+            console.log(todoList);
+            console.log(remeber("eat"));
+            console.log(todoList);
+            console.log(getTask("eat"));
+            console.log(todoList);
+            console.log(remeber("eat"));
+            console.log(rememberUrgently("eat2"));
+            console.log(todoList);
+
+            console.log("-----------------");
+
+            console.log([0,1,2,3,4].slice(2,4)); // returns array from position 2 to 3. 2 is including 4 is excluding
+
+            function remove(array, index){
+                  return array.slice(0, index).concat(array.slice(index+1));
+            }
+            console.log(remove(["a1","a2","a3","a4","a5"],2));
+      </script>
+</body>
+</html>

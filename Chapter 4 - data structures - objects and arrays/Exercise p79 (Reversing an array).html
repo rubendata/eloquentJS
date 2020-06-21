@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <script>
+            function reverseArray(array){
+                  let newArray = []
+                  for(i of array) {
+                        newArray.unshift(i);
+                  }
+                   return newArray;
+            }
+            console.log(reverseArray( [1,2,3,4]));
+
+            function reverseArrayModify(array){
+                  for (i=0;i<Math.floor(array.length/2);i++){
+                        // console.log("array[i] "+array[i]);
+                        // console.log("array[array.length-1-i: "+array[array.length-1-i]);
+                        let old = array[i];
+                        array[i]=array[array.length-1-i];
+                        array[array.length-1-i]=old;
+                  }
+                  return array
+            }
+
+            console.log(reverseArrayModify([5,9,11,12]));
+      </script>
+</body>
+</html>
