@@ -7,35 +7,59 @@
 <body>
       <script>
             let obj = {
+                  age: 42,
+                  name: "peter"
+                  
+            };
+            
+            let obj2 = {
                   name: "peter",
                   age: 42
             };
-
-            let obj2 = {
-                  name: "hans",
-                  age: 32
-            };
-
-            let noObj = null;
-            console.log(typeof(obj),typeof(noObj))
             
-            console.log(obj === null, noObj === null)
+            let noObj = null;
 
-            console.log( Object.keys(obj))
+            console.log("obj is type: "+typeof(obj),"\n"+"NoObj (null) is type: "+typeof(noObj))
+            console.log(obj === null,noObj === null)
+            console.log("Object.keys of object: "+Object.keys(obj))
             console.log("---------------------")
-
+            
             function deepEqual(a,b){
-                  if(typeof(a)==="object" && typeof(b)==="object" && !(a === null || b === null) ) {
-                        console.log( Object.keys(a));
-                        console.log( Object.keys(a));
-                        return (Object.keys(a) == Object.keys(b));
+                  function sortAscending(a,b){ //sort function for sorting object properties
+                              if (a>b) { return 1;}
+                              if(b>a) { return -1;}
+                              return 0;
+                        }
+                  if(typeof(a)==="object" && typeof(b)==="object" && !(a === null || b === null) ) { //check of both elements (a,b) are objects and not null (null is also typeof => object)
+                        let aKeys = Object.keys(a), bKeys = Object.keys(b);
+                        aKeys.sort(sortAscending), bKeys.sort(sortAscending); //sort object properties in case objects have the same properties but in different order
+                        
+                        for (i=0; i<aKeys.length;i++){
+                              if(aKeys[i]!==bKeys[i]) { //if the keys do not match return false
+                                    return false
+                              }
+                        }
+                        for(i=0; i<aKeys.length;i++){
+                              if (a[aKeys[i]]!==b[bKeys[i]]){ //if the values of the keys do not match return false
+                                    return false;
+                              };
+                        }
+                        return true;
                   }
                   else {
-                        console.log(false)
+                        if(a===b) return true;
+                        else return false;
+                        
+                        
                   }
-
+                  
             }
-            console.log( deepEqual(obj,obj2))
+
+            console.log( deepEqual(obj,obj2));
+            console.log( deepEqual(["age","sasdas"],["age","name"]))
+            console.log( deepEqual("2","3"));
+            console.log( deepEqual(2,3));
+            
       </script>
 </body>
 </html>
