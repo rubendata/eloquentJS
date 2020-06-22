@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <script>
+            const myArray = [["hans","peter"],["deine","mutter"],["hat","dich","lieb"]];
+            
+            function flattening (a,b){
+                  return a.concat(b);
+            }
+            
+            const logger = (element, element2) => element.concat(element2);
+            
+            console.log( logger(myArray));
+            console.log( myArray.reduce(logger));
+            console.log(myArray.reduce(flattening))
+
+            
+      </script>
+</body>
+</html>
